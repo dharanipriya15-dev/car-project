@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Booking Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Taxi Service</h2>
+    <ul>
+        <li onclick="location.href='home.html'">Home</li>
+
+        <li onclick="window.location.href='services.html'">Service</li>
+
+        <li onclick="window.location.href='about.html'">About</li>
+
+        <li onclick="window.location.href='contact.html'">Contact</li>
+
+        <li onclick="window.location.href='packages.html'">Package</li>
+    </ul>
+</div>
+
+<div class="main" id="mainContent">
+    <!-- Default page loaded on start -->
+    <div class="topbar">
+        <h1 id="welcomeText">Welcome To Taxi Service..👋</h1>
+        <img src="car image.jfif" class="profile" />
+    </div>
+
+    <h2 class="section-title">Available Cars</h2>
+    <div class="cars">
+        <div class="car-box">
+            <img src="minicarswift.jfif" />
+            <h3>Mini Car</h3>
+            <p>₹10 / km</p>
+            <button onclick="location.href='booknow.html'">Book Now</button>
+        </div>
+
+        <div class="car-box">
+            <img src="sedan car.jfif" />
+            <h3>Sedan</h3>
+            <p>₹15 / km</p>
+            <button onclick="location.href='booknow.html'">Book Now</button>
+        </div>
+
+        <div class="car-box">
+            <img src="suv car.png" />
+            <h3>SUV</h3>
+            <p>₹20 / km</p>
+            <button onclick="location.href='booknow.html'">Book Now</button>
+        </div>
+        </div>
+    <footer>
+        <p>© <span id="year"></span> Taxi Service. Designed by Dharani</p>
+    </footer>
+    </div>
+
+
+
+<script>
+function loadPage(page) {
+    const main = document.getElementById("mainContent");
+
+    // Remove active class from all sidebar items
+    document.querySelectorAll(".sidebar ul li").forEach(li => li.classList.remove("active"));
+
+    // Add active class to clicked item
+    event.target.classList.add("active");
+
+
+    // Load pages
+    if (page === "home") {
+        main.innerHTML = `
+            <div class="topbar">
+                <h1>Welcome, User 👋</h1>
+                <img src="car image.jfif" class="profile" />
+            </div>
+
+            <h2 class="section-title">Available Cars</h2>
+            <div class="cars">
+                <div class="car-box">
+                    <img src="mini car.jfif" />
+                    <h3>Mini Car</h3>
+                    <p>₹10 / km</p>
+                    <button onclick="location.href='bookRide.html'">Book Now</button>
+                </div>
+
+                <div class="car-box">
+                    <img src="sedan car.jfif" />
+                    <h3>Sedan</h3>
+                    <p>₹15 / km</p>
+                    <button onclick="location.href='bookRide.html'">Book Now</button>
+                </div>
+
+                <div class="car-box">
+                    <img src="suv car.png" />
+                    <h3>SUV</h3>
+                    <p>₹20 / km</p>
+                    <button onclick="location.href='bookRide.html'">Book Now</button>
+                </div>
+            </div>
+        `;
+    }
+
+    if (page === "service") {
+        main.innerHTML = `
+            <h1>Our Services</h1>
+            <p>🚕 Taxi rides</p>
+            <p>🚗 Outstation rides</p>
+            <p>🛠 Car rental service</p>
+        `;
+    }
+
+    if (page === "about") {
+        main.innerHTML = `
+            <h1>About Us</h1>
+            <p>We provide safe and affordable taxi services across the city.</p>
+        `;
+    }
+
+    if (page === "contact") {
+        main.innerHTML = `
+            <h1>Contact Us</h1>
+            <p>Email: support@taxiservice.com</p>
+            <p>Phone: +91 8838941115 </p>
+        `;
+    }
+
+    if (page === "package") {
+        main.innerHTML = `
+            <h1>Our Packages</h1>
+            <p>🎁 City Ride – ₹999</p>
+            <p>🎁 Airport Ride – ₹1299</p>
+            <p>🎁 Full Day Rental – ₹1999</p>
+        `;
+    }
+}
+</script>
+
+</body>
+</html>

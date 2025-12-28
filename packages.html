@@ -1,0 +1,133 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Packages — Taxi Service</title>
+    <link rel="stylesheet" href="packages.css" />
+</head>
+<body>
+
+<header>
+    <div class="container header-flex">
+        <h2 class="logo">Taxi Service</h2>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="services.html">Service</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="active"><a href="#">Packages</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <h1>Explore Our Premium Travel Packages</h1>
+    <p>Choose from hill stations, temple tours, city trips & premium tourism packages.</p>
+</section>
+
+<section class="packages container">
+
+    <!-- Template card -->
+    <div class="package-card">
+        <img src="ootyimage.jfif" alt="Ooty Hill Station">
+        <div class="content">
+            <h3>Ooty Hill Station Tour</h3>
+            <p>2 Days • Beautiful lake, tea factory, botanical garden & viewpoints.</p>
+            <button onclick="bookPackage('Ooty Hill Station')">Book Now</button>
+        </div>
+    </div>
+
+    <div class="package-card">
+        <img src="kodaikanalimage.jfif" alt="Kodaikanal">
+        <div class="content">
+            <h3>Kodaikanal Trip</h3>
+            <p>2 Days • Green valley view, boating, pine forest & waterfalls.</p>
+            <button onclick="bookPackage('Kodaikanal Trip')">Book Now</button>
+        </div>
+    </div>
+
+    <div class="package-card">
+        <img src="munnarimage.jfif" alt="Munnar">
+        <div class="content">
+            <h3>Munnar Kerala Tourism</h3>
+            <p>3 Days • Tea estates, echo point, elephant park & waterfalls.</p>
+            <button onclick="bookPackage('Munnar Kerala')">Book Now</button>
+        </div>
+    </div>
+
+    <div class="package-card">
+        <img src="Tirupathi image.jfif" alt="Tirupati Temple">
+        <div class="content">
+            <h3>Tirupati Balaji Temple</h3>
+            <p>1 Day • Special darshan, laddu counter & local sightseeing.</p>
+            <button onclick="bookPackage('Tirupati Temple')">Book Now</button>
+        </div>
+    </div>
+
+    <div class="package-card">
+        <img src="meenakshi image.jfif" alt="Madurai Temple">
+        <div class="content">
+            <h3>Madurai Meenakshi Temple</h3>
+            <p>1 Day • Temple visit, shopping & local food experience.</p>
+            <button onclick="bookPackage('Madurai Temple')">Book Now</button>
+        </div>
+    </div>
+
+    <div class="package-card">
+        <img src="rameshwaram.jfif" alt="Rameswaram">
+        <div class="content">
+            <h3>Rameswaram & Dhanushkodi</h3>
+            <p>1 Day • Pamban bridge, temple visit & Dhanushkodi beach.</p>
+            <button onclick="bookPackage('Rameswaram Tour')">Book Now</button>
+        </div>
+    </div>
+
+    <div class="package-card">
+        <img src="chennai image.jfif" alt="Chennai City Tour">
+        <div class="content">
+            <h3>Chennai City Tour</h3>
+            <p>1 Day • Marina beach, temples, malls & top attractions.</p>
+            <button onclick="bookPackage('Chennai City Tour')">Book Now</button>
+        </div>
+    </div>
+
+    <div class="package-card">
+        <img src="mahabalipuram image.jfif" alt="Mahabalipuram">
+        <div class="content">
+            <h3>Mahabalipuram Heritage Trip</h3>
+            <p>1 Day • Shore temple, beach, sculpture museum & lighthouse.</p>
+            <button onclick="bookPackage('Mahabalipuram Trip')">Book Now</button>
+        </div>
+    </div>
+
+</section>
+
+<footer>
+    <p>© <span id="year"></span> Taxi Service. Designed by Abinanth.</p>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+function bookPackage(name){
+    window.location.href = "bookRide.html?package=" + encodeURIComponent(name);
+}
+
+
+function bookPackage(packageName, price) {
+    let phone = "7092771316"; // your WhatsApp number
+    let message = `Hello, I want to book this package:\n\nPackage: ${packageName}\nPrice: ${price}\n\nPlease confirm my booking.`;
+    
+    let url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+}
+
+</script>
+
+</body>
+</html>

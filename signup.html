@@ -1,0 +1,92 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car Booking - Sign Up</title>
+    <link rel="stylesheet" href="signup.css" />
+</head>
+<body>
+
+<div class="container">
+
+    <div class="form-box">
+        <h2>Create Account</h2>
+        <p class="subtitle">Join us and start booking your rides</p>
+
+        <form onsubmit="return goToLogin()">
+
+            <div class="input-group">
+                <input type="text" placeholder="Full Name" required>
+            </div>
+
+            <div class="input-group">
+                <input type="email" placeholder="Email Address" required>
+            </div>
+
+            <div class="input-group">
+                <input type="text" placeholder="Phone Number" required>
+            </div>
+
+            <div class="input-group">
+                <input type="password" placeholder="Password" required>
+            </div>
+
+            <div class="input-group">
+                <input type="password" placeholder="Confirm Password" required>
+            </div>
+
+            <button type="submit" class="btn">Sign Up</button>
+
+        </form>
+
+        <p class="bottom-text">
+            Already have an account? <a href="index.html">Login</a>
+        </p>
+    </div>
+
+    <div class="image-box">
+        <img src="car image.jfif"Taxi Illustration">
+    </div>
+
+</div>
+
+<!-- SUCCESS BOX OUTSIDE FORM -->
+<div id="successBox" class="success-box">
+    <p>You have successfully signed up.<br>Thank you! 😊</p>
+</div>
+
+<script>
+function goToLogin() {
+    const name = document.querySelector('input[placeholder="Full Name"]').value;
+    const email = document.querySelector('input[type="email"]').value;
+    const password = document.querySelectorAll('input[type="password"]')[0].value;
+    const confirmPassword = document.querySelectorAll('input[type="password"]')[1].value;
+
+    if (password !== confirmPassword) {
+        alert("Passwords do not match!");
+        return false;
+    }
+
+    // Save name, email, password
+    localStorage.setItem("savedName", name);
+    localStorage.setItem("savedEmail", email);
+    localStorage.setItem("savedPassword", password);
+
+    // Show success message
+    document.getElementById("successBox").style.display = "block";
+
+    // Redirect after 2 seconds
+    setTimeout(function(){
+        window.location.href = "index.html";
+    }, 2000);
+
+    return false;
+}
+</script>
+
+
+</body>
+</html>

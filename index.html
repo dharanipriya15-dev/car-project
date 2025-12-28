@@ -1,0 +1,64 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Booking - Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="login-box">
+        <h2>Taxi Service</h2>
+        <p class="subtitle">Login to book your ride</p>
+
+        <form id="loginForm">
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" placeholder="Enter your email" id="email" required>
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" placeholder="Enter your password" id="password" required>
+            </div>
+
+            <button type="submit" class="btn">Login</button>
+        </form>
+
+        <p class="signup-text">Don't have an account? <a href="signup.html">signup</a></p>
+    </div>
+
+    <!-- Car Illustration -->
+    <div class="car-box">
+        <img src="car image.jfif" alt="car">
+    </div>
+</div>
+
+<script>
+const loginForm = document.getElementById('loginForm');
+
+loginForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    const savedEmail = localStorage.getItem("savedEmail");
+    const savedPassword = localStorage.getItem("savedPassword");
+
+    if (email === savedEmail && password === savedPassword) {
+        window.location.href = "dashboard.html";
+    } else {
+        alert("Invalid email or password");
+    }
+});
+</script>
+
+
+</body>
+</html>

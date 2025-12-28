@@ -1,0 +1,91 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Now - Taxi Service</title>
+    <link rel="stylesheet" href="booknow.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🚕 Book Your Ride</h1>
+    <p class="subtitle">Fast • Safe • Affordable</p>
+
+    <form id="bookingForm">
+
+        <div class="input-group">
+            <label>Your Name</label>
+            <input type="text" id="name" required>
+        </div>
+
+        <div class="input-group">
+            <label>Phone Number</label>
+            <input type="tel" id="phone" required>
+        </div>
+
+        <div class="input-group">
+            <label>Pickup Location</label>
+            <input type="text" id="pickup" required>
+        </div>
+
+        <div class="input-group">
+            <label>Drop Location</label>
+            <input type="text" id="drop" required>
+        </div>
+
+        <!-- FIXED -->
+        <div class="input-row">
+            <div class="input-group">
+                <label>Date</label>
+                <input type="date" id="date" required>
+            </div>
+
+            <div class="input-group">
+                <label>Time</label>
+                <input type="time" id="time" required>
+            </div>
+        </div> <!-- CLOSED input-row properly -->
+
+        <!-- BUTTON OUTSIDE FLEX ROW -->
+        <button type="button" class="btn" onclick="sendToWhatsApp()">Confirm Booking</button>
+
+    </form>
+
+</div>
+
+<script>
+function sendToWhatsApp() {
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let pickup = document.getElementById("pickup").value;
+    let drop = document.getElementById("drop").value;
+    let date = document.getElementById("date").value;
+    let time = document.getElementById("time").value;
+
+    let waMessage = 
+`🚕 New Taxi Booking Request
+
+👤 Name: ${name}
+📞 Phone: ${phone}
+
+📍 Pickup: ${pickup}
+🏁 Drop: ${drop}
+
+📅 Date: ${date}
+⏰ Time: ${time}
+
+Please confirm my booking.`;
+
+    let phoneNumber = "7092771316"; // YOUR WHATSAPP NUMBER
+    let url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(waMessage)}`;
+
+    window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — Taxi Service</title>
+  <link rel="stylesheet" href="about.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="brand">Taxi Service</div>
+      <nav>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="services.html">Service</a></li>
+          <li class="active"><a href="#">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="packages.html">Package</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content">
+      <h1>About Taxi Service</h1>
+      <p>We provide fast, safe, and affordable rides across the city with verified drivers and 24/7 support.</p>
+      <img src="car image.jfif" alt="Taxi service illustration">
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="mission container">
+    <h2>Our Mission</h2>
+    <p>To make every ride safe, reliable, and affordable while leveraging technology for a seamless customer experience.</p>
+    <div class="mission-cards">
+      <div class="card">
+        <h3>Safety First</h3>
+        <p>All vehicles sanitized and drivers verified.</p>
+      </div>
+      <div class="card">
+        <h3>Fast Service</h3>
+        <p>Get rides instantly with smart tracking.</p>
+      </div>
+      <div class="card">
+        <h3>Transparent Pricing</h3>
+        <p>No hidden charges — only what you see is what you pay.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats container">
+    <div class="stat">
+      <h3>12,000+</h3>
+      <p>Happy Riders</p>
+    </div>
+    <div class="stat">
+      <h3>450+</h3>
+      <p>Active Drivers</p>
+    </div>
+    <div class="stat">
+      <h3>24/7</h3>
+      <p>Support</p>
+    </div>
+    <div class="stat">
+      <h3>99.9%</h3>
+      <p>On-time Rides</p>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="team container">
+    <h2>Meet Our Team</h2>
+    <div class="team-cards">
+      <div class="team-member">
+        <img src="lead driver.jfif" alt="Driver 1">
+        <h4>Ravi Kumar</h4>
+        <p>Lead Driver</p>
+      </div>
+      <div class="team-member">
+        <img src="operation manager.jfif" alt="Driver 2">
+        <h4>Anita Sharma</h4>
+        <p>Operations Manager</p>
+      </div>
+      <div class="team-member">
+        <img src="lead driver.jfif" alt="Driver 3">
+        <h4>Rahul Singh</h4>
+        <p>Customer Support</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© <span id="year"></span> Taxi Service. Designed by Dharani</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
